@@ -1,0 +1,7 @@
+#Psuedocode
+
+
+Todo
+☐ HTML and CSS for Calculator
+☐ See what JS code I can use from old calculator project into this one
+☐ Create a new function (operate) that takes and operator and 2 numbers and then calls one of the above functions on the numbers
