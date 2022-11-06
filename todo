@@ -1,5 +1,9 @@
 #Psuedocode
-
+Operate function
+    -take two numbers
+    -depending on input from webpage call certain function
+Display Function
+    -take input from button clicks and display them combined on the screen until an operate is clicked
 
 Todo
 ☐ HTML and CSS for Calculator
