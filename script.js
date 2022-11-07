@@ -7,7 +7,7 @@ const equation = document.getElementById("equation");
 const numBtn = document.querySelectorAll(".num-btn");
 const deleteBtn = document.getElementById("delete");
 const clearBtn = document.getElementById("clear");
-let displayValue = "";
+let displayValue = "0";
 
 const add = function (a, b) {
   let total = a + b;
