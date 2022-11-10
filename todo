@@ -5,10 +5,15 @@ Operate function
 Display Function
     -take input from button clicks and display them combined on the screen until an operate is clicked
 
+Equals
+    -Take first operand and second operand and run equation depending on the operator selected.
+
+Operation 
+
 Todo
 ✔ HTML and CSS for Calculator @done(22-11-06 10:25)
 ✔ See what JS code I can use from old calculator project into this one @done(22-11-06 10:25)
-☐ Create a new function (operate) that takes and operator and 2 numbers and then calls one of the above functions on the numbers
+☐ Create a new function (operate) that takes and operator and 2 numbers and then calls oneD of the above functions on the numbers
 ☐ Error display in top right of screen
     ☐ make different flex box there? in row? Inside equation?
 ☐ Make operate function work and take display value with the operator

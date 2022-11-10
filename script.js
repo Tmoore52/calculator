@@ -3,61 +3,100 @@ const subtractButton = document.getElementById("subtract");
 const multiplyButton = document.getElementById("multiply");
 const divideButton = document.getElementById("divide");
 const display = document.getElementById("display");
+const operationBtns = document.querySelectorAll(".operator");
 const equation = document.getElementById("equation");
 const numBtn = document.querySelectorAll(".num-btn");
 const deleteBtn = document.getElementById("delete");
 const clearBtn = document.getElementById("clear");
-let displayValue = "0";
+const allClearBtn = document.getElementById("all-clear");
+const equalsBtn = document.getElementById("equals");
 
-const add = function (a, b) {
-  let total = a + b;
-  return total;
+let displayValue = "";
+let firstEquation = "";
+let total = "";
+
+const add = function () {
+  total = +firstEquation + +displayValue;
+  equation.innerText = `${firstEquation}+${displayValue}=`;
+  display.innerText = total;
+  displayValue = total;
 };
 
 const subtract = function (a, b) {
-  let total = a - b;
-  return total;
+  total = +firstEquation - +displayValue;
+  equation.innerText = `${firstEquation}-${displayValue}=`;
+  display.innerText = total;
+  displayValue = total;
 };
 
 const divide = function (a, b) {
-  let total = a / b;
-  return total;
+  total = +firstEquation / +displayValue;
+  equation.innerText = `${firstEquation}/${displayValue}=`;
+  display.innerText = total;
+  displayValue = total;
 };
 
 const multiply = function (a, b) {
-  let total = a * b;
-  return total;
+  total = +firstEquation * +displayValue;
+  equation.innerText = `${firstEquation}*${displayValue}=`;
+  display.innerText = total;
+  displayValue = total;
 };
 
-function operate(a, b) {
-addButton.addEventListener("click", add(displayValue, b));
-  subtractButton.click(subtract(a, b));
-  multiplyButton.click(multiply(a, b));
-  divideButton.click(divide(a, b));
+function operate() {
+  if (equation.innerText.includes("+") === true) {
+    add();
+  } else if (equation.innerText.includes("-") === true) {
+    subtract();
+  } else if (equation.innerText.includes("*") === true) {
+    multiply();
+  } else if (equation.innerText.includes("/") === true) {
+    divide();
+  }
 }
 
+function operation(e) {
+  equation.innerText = `${displayValue}${e.target.innerText}`;
+  firstEquation = displayValue;
+  displayValue = "";
+
+}
+
+function equals() {}
+
 function updateDisplay(e) {
-  displayValue += e.target.innerText
+  displayValue += e.target.innerText;
   display.innerText = displayValue;
 }
 
 function clearDisplay() {
   displayValue = "";
-  display.innerText="";
+  display.innerText = "";
+}
+
+function allClear() {
+  displayValue = "";
+  display.innerText = "";
+  firstEquation = "";
+  equation.innerText = "";
 }
 
 function deleteNum() {
   displayValue = displayValue.slice(0, -1);
-  display.innerText = displayValue
+  display.innerText = displayValue;
 }
 
-
-numBtn.forEach(btn => btn.addEventListener("click", updateDisplay));
+numBtn.forEach((btn) => btn.addEventListener("click", updateDisplay));
 
 clearBtn.addEventListener("click", clearDisplay);
 
 deleteBtn.addEventListener("click", deleteNum);
-  
+
+allClearBtn.addEventListener("click", allClear);
+
+operationBtns.forEach((btn) => btn.addEventListener("click", operation));
+
+equalsBtn.addEventListener("click", operate);
 
 function runEvent(e) {
   e.preventDefault();
