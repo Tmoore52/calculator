@@ -17,28 +17,27 @@ let total = "";
 
 const add = function () {
   total = +firstEquation + +displayValue;
-  equation.innerText = `${firstEquation}+${displayValue}=`;
+  equation.innerText = `${firstEquation}+${displayValue}`;
   display.innerText = total;
-  displayValue = total;
 };
 
 const subtract = function (a, b) {
   total = +firstEquation - +displayValue;
-  equation.innerText = `${firstEquation}-${displayValue}=`;
+  equation.innerText = `${firstEquation}-${displayValue}`;
   display.innerText = total;
   displayValue = total;
 };
 
 const divide = function (a, b) {
   total = +firstEquation / +displayValue;
-  equation.innerText = `${firstEquation}/${displayValue}=`;
+  equation.innerText = `${firstEquation}/${displayValue}`;
   display.innerText = total;
   displayValue = total;
 };
 
 const multiply = function (a, b) {
   total = +firstEquation * +displayValue;
-  equation.innerText = `${firstEquation}*${displayValue}=`;
+  equation.innerText = `${firstEquation}*${displayValue}`;
   display.innerText = total;
   displayValue = total;
 };
@@ -95,7 +94,7 @@ deleteBtn.addEventListener("click", deleteNum);
 allClearBtn.addEventListener("click", allClear);
 
 operationBtns.forEach((btn) => btn.addEventListener("click", operation));
-
+// operationBtns.forEach((btn) => btn.addEventListener("click", operate))
 equalsBtn.addEventListener("click", operate);
 
 function runEvent(e) {

@@ -10,10 +10,20 @@ Equals
 
 Operation 
 
+
+
 Todo
 ✔ HTML and CSS for Calculator @done(22-11-06 10:25)
 ✔ See what JS code I can use from old calculator project into this one @done(22-11-06 10:25)
-☐ Create a new function (operate) that takes and operator and 2 numbers and then calls oneD of the above functions on the numbers
+✔ Create a new function (operate) that takes and operator and 2 numbers and then calls oneD of the above functions on the numbers @done(22-11-10 10:02)
 ☐ Error display in top right of screen
     ☐ make different flex box there? in row? Inside equation?
-☐ Make operate function work and take display value with the operator
+✔ Make operate function work and take display value with the operator @done(22-11-10 10:03)
+☐ Make operators also run the operate function
+
+Bug Fixes
+    -Make total of first equation be fed back into the next equation if another operand is clicked.
+Errors
+    -after entering an equation and getting an answer, the answer does not feed back into the loop if another operand is clicked. 
+Ideas
+    -when hitting the equal button, need to store that value as a new variable and pull it back up if that value has data
