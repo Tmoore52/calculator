@@ -19,6 +19,7 @@ const add = function () {
   total = +firstEquation + +displayValue;
   equation.innerText = `${firstEquation}+${displayValue}`;
   display.innerText = total;
+  firstEquation = +total;
 };
 
 const subtract = function (a, b) {
@@ -35,7 +36,7 @@ const divide = function (a, b) {
   displayValue = total;
 };
 
-const multiply = function (a, b) {
+const multiply = function () {
   total = +firstEquation * +displayValue;
   equation.innerText = `${firstEquation}*${displayValue}`;
   display.innerText = total;
@@ -52,16 +53,24 @@ function operate() {
   } else if (equation.innerText.includes("/") === true) {
     divide();
   }
+  displayValue =  total;
 }
 
 function operation(e) {
   equation.innerText = `${displayValue}${e.target.innerText}`;
   firstEquation = displayValue;
   displayValue = "";
-
+  if (equation.innerText.includes("+") === true) {
+    add();
+  } else if (equation.innerText.includes("-") === true) {
+    subtract();
+  } else if (equation.innerText.includes("*") === true) {
+    multiply();
+  } else if (equation.innerText.includes("/") === true) {
+    divide();
+  }
 }
 
-function equals() {}
 
 function updateDisplay(e) {
   displayValue += e.target.innerText;
